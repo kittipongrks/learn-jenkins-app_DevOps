@@ -8,7 +8,7 @@ try {
   execSync('git config --global user.name "kittipongrks"');
 
   execSync("git add .");
-  execSync(`git commit -m "${commitMessage}"`);
+  execSync('git commit -m "${commitMessage}');
   execSync("git push origin main");
   console.log("✅ Code committed & pushed successfully!");
 } catch (error) {
