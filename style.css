@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  background: #fff4dc;
+  background: #eabaee;
   padding: 30px 40px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(231, 73, 231, 0.2);
@@ -29,8 +29,8 @@ h1 {
 }
 
 button {
-  background: #ffe0a8;
-  color: #5a4632;
+  background: #da7cdd;
+  color: #333333;
   border: none;
   padding: 12px 24px;
   font-size: 16px;
