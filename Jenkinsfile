@@ -7,6 +7,19 @@ pipeline {
     }
 
     stages {
+        stage('Git Pull') {
+            steps {
+                sh 'git pull origin main'
+            }
+        }
+
+        stage('Auto Commit & Push') {
+            steps {
+                sh '''
+                    node auto_commit.js
+                '''
+            }
+        }
         stage('Build') {
             agent {
                 docker {
