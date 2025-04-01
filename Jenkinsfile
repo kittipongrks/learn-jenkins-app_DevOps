@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     tools {
         nodejs "nodejs"  // ตั้งชื่อ NodeJS ที่ติดตั้งใน Jenkins
     }
@@ -19,7 +19,7 @@ pipeline {
         stage('Auto Commit & Push') {
             steps {
                 sh '''
-                    cd 
+                    cd $WORKSPACE
                     node auto_commit.js
                 '''
             }
