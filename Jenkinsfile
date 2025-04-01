@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    
+    tools {
+        nodejs "nodejs"  // ตั้งชื่อ NodeJS ที่ติดตั้งใน Jenkins
+    }
     environment {
         NETLIFY_SITE_ID = '6ad10dd3-bb7b-4cf7-842f-8abec7c83f8a'
         NETLIFY_AUTH_TOKEN = credentials('NETLIFY_AUTH')
@@ -16,6 +19,7 @@ pipeline {
         stage('Auto Commit & Push') {
             steps {
                 sh '''
+                    cd 
                     node auto_commit.js
                 '''
             }
