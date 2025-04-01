@@ -7,6 +7,25 @@ pipeline {
     }
 
     stages {
+        stage('Check Node.js Installation') {
+            steps {
+                script {
+                    // ตรวจสอบว่า Node.js ติดตั้งอยู่หรือไม่
+                    def nodeInstalled = sh(script: "which node || echo 'not installed'", returnStdout: true).trim()
+
+                    if (nodeInstalled == 'not installed') {
+                        echo "❌ Node.js not found, installing..."
+                        // ติดตั้ง Node.js ถ้ายังไม่มี
+                        sh '''
+                            curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+                            sudo apt install -y nodejs
+                        '''
+                    } else {
+                        echo "✅ Node.js is already installed."
+                    }
+                }
+            }
+        }
         stage('Git Pull') {
             steps {
                 sh 'git pull origin main'
