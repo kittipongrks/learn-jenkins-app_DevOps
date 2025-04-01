@@ -1,0 +1,4 @@
+NETLIFY_AUTH = nfp_qU8e1AH4uYXzZtrdqZXfBkX18wpZ7agB097d
+NETLIFY_SITE_ID = 6ad10dd3-bb7b-4cf7-842f-8abec7c83f8a
+
+
