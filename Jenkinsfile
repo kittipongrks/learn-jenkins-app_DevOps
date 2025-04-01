@@ -36,9 +36,7 @@ pipeline {
             steps {
                 sh '''
                     cd $WORKSPACE
-                    git add .
-                    git commit -m "Commit change from Jenkins"
-                    git push origin main
+                    node auto_commit.js
                 '''
             }
         }
